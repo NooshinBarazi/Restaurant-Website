@@ -12,6 +12,7 @@ type Querier interface {
 	CreateCategory(ctx context.Context, categoryName string) (Category, error)
 	CreateImage(ctx context.Context, arg CreateImageParams) (Image, error)
 	CreatePost(ctx context.Context, arg CreatePostParams) (Post, error)
+	CreateProduct(ctx context.Context, arg CreateProductParams) (Product, error)
 	GetProduct(ctx context.Context, id int64) (Product, error)
 	ListCategories(ctx context.Context, arg ListCategoriesParams) ([]Category, error)
 	ListPosts(ctx context.Context, arg ListPostsParams) ([]Post, error)
