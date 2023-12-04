@@ -9,6 +9,90 @@ import (
 	"context"
 )
 
+const createProduct = `-- name: CreateProduct :one
+INSERT INTO products (
+    product_image,
+    product_name,
+    product_category,
+    sold_number,
+    brand,
+    color,
+    screen_size,
+    hard_disk_size,
+    display,
+    graphic,
+    processor,
+    in_the_box,
+    height,
+    width,
+    cost,
+    star
+) VALUES (
+    $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16
+) RETURNING id, product_image, product_name, product_category, sold_number, brand, color, screen_size, hard_disk_size, display, graphic, processor, in_the_box, height, width, cost, star
+`
+
+type CreateProductParams struct {
+	ProductImage    int64   `json:"product_image"`
+	ProductName     string  `json:"product_name"`
+	ProductCategory int64   `json:"product_category"`
+	SoldNumber      int32   `json:"sold_number"`
+	Brand           string  `json:"brand"`
+	Color           string  `json:"color"`
+	ScreenSize      string  `json:"screen_size"`
+	HardDiskSize    string  `json:"hard_disk_size"`
+	Display         string  `json:"display"`
+	Graphic         string  `json:"graphic"`
+	Processor       string  `json:"processor"`
+	InTheBox        string  `json:"in_the_box"`
+	Height          string  `json:"height"`
+	Width           string  `json:"width"`
+	Cost            int64   `json:"cost"`
+	Star            float64 `json:"star"`
+}
+
+func (q *Queries) CreateProduct(ctx context.Context, arg CreateProductParams) (Product, error) {
+	row := q.db.QueryRowContext(ctx, createProduct,
+		arg.ProductImage,
+		arg.ProductName,
+		arg.ProductCategory,
+		arg.SoldNumber,
+		arg.Brand,
+		arg.Color,
+		arg.ScreenSize,
+		arg.HardDiskSize,
+		arg.Display,
+		arg.Graphic,
+		arg.Processor,
+		arg.InTheBox,
+		arg.Height,
+		arg.Width,
+		arg.Cost,
+		arg.Star,
+	)
+	var i Product
+	err := row.Scan(
+		&i.ID,
+		&i.ProductImage,
+		&i.ProductName,
+		&i.ProductCategory,
+		&i.SoldNumber,
+		&i.Brand,
+		&i.Color,
+		&i.ScreenSize,
+		&i.HardDiskSize,
+		&i.Display,
+		&i.Graphic,
+		&i.Processor,
+		&i.InTheBox,
+		&i.Height,
+		&i.Width,
+		&i.Cost,
+		&i.Star,
+	)
+	return i, err
+}
+
 const getProduct = `-- name: GetProduct :one
 SELECT id, product_image, product_name, product_category, sold_number, brand, color, screen_size, hard_disk_size, display, graphic, processor, in_the_box, height, width, cost, star FROM products
 WHERE id = $1 LIMIT 1

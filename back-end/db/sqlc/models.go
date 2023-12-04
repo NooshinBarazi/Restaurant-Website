@@ -5,7 +5,6 @@
 package db
 
 import (
-	"database/sql"
 	"time"
 )
 
@@ -31,21 +30,21 @@ type Post struct {
 }
 
 type Product struct {
-	ID              int64          `json:"id"`
-	ProductImage    int64          `json:"product_image"`
-	ProductName     string         `json:"product_name"`
-	ProductCategory int64          `json:"product_category"`
-	SoldNumber      sql.NullInt32  `json:"sold_number"`
-	Brand           sql.NullString `json:"brand"`
-	Color           sql.NullString `json:"color"`
-	ScreenSize      sql.NullString `json:"screen_size"`
-	HardDiskSize    sql.NullString `json:"hard_disk_size"`
-	Display         sql.NullString `json:"display"`
-	Graphic         sql.NullString `json:"graphic"`
-	Processor       sql.NullString `json:"processor"`
-	InTheBox        sql.NullString `json:"in_the_box"`
-	Height          sql.NullString `json:"height"`
-	Width           sql.NullString `json:"width"`
-	Cost            int64          `json:"cost"`
-	Star            float64        `json:"star"`
+	ID              int64   `json:"id"`
+	ProductImage    int64   `json:"product_image"`
+	ProductName     string  `json:"product_name"`
+	ProductCategory int64   `json:"product_category"`
+	SoldNumber      int32   `json:"sold_number"`
+	Brand           string  `json:"brand"`
+	Color           string  `json:"color"`
+	ScreenSize      string  `json:"screen_size"`
+	HardDiskSize    string  `json:"hard_disk_size"`
+	Display         string  `json:"display"`
+	Graphic         string  `json:"graphic"`
+	Processor       string  `json:"processor"`
+	InTheBox        string  `json:"in_the_box"`
+	Height          string  `json:"height"`
+	Width           string  `json:"width"`
+	Cost            int64   `json:"cost"`
+	Star            float64 `json:"star"`
 }
