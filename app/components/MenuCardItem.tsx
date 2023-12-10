@@ -10,7 +10,7 @@ export interface CategoryProps {
 export const MenuCardItem = ({ title, icon, onClick }: CategoryProps) => {
   return (
     <>
-      <ButtonBase onClick={onClick}>
+      <ButtonBase onClick={onClick} sx={{ marginRight: '1rem' }}>
         <Card variant="outlined">
           <CardContent>
             <Typography variant="h5" component='h2' color={'textPrimary'} sx={{ "&:hover": { color: "gray" }}}>

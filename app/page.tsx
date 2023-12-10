@@ -14,6 +14,10 @@ export default function Home() {
     {title: 'پلوهای اعیونی', icon: <RamenDiningIcon />, onClick: ()=> console.log('clicked')},
     {title: 'غذاهای فرنگی', icon: <RamenDiningIcon />, onClick: ()=> console.log('clicked')},
     {title: 'پاستاها', icon: <RamenDiningIcon />, onClick: ()=> console.log('clicked')},
+    {title: 'پاستاها', icon: <RamenDiningIcon />, onClick: ()=> console.log('clicked')},
+    {title: 'پاستاها', icon: <RamenDiningIcon />, onClick: ()=> console.log('clicked')},
+    {title: 'پاستاها', icon: <RamenDiningIcon />, onClick: ()=> console.log('clicked')},
+    {title: 'پاستاها', icon: <RamenDiningIcon />, onClick: ()=> console.log('clicked')},
 ]
   return <Container>
     <MenuCard categories={categories} />
