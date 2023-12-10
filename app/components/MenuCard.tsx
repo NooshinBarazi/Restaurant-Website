@@ -1,25 +1,25 @@
-import { ReactNode } from "react";
-import { ButtonBase, Typography, Card, CardContent } from "@mui/material";
+import { Grid } from "@mui/material";
+import { MenuCardItem, CategoryProps } from "./MenuCardItem";
 
 interface Props {
-  Text: string;
-  Icon: ReactNode;
-  onClick: () => void;
+  categories: CategoryProps[];
+
 }
 
-export const MenuCard = ({ Text, Icon, onClick }: Props) => {
+export const MenuCard = ({ categories }: Props) => {
   return (
-    <>
-      <ButtonBase onClick={onClick}>
-        <Card variant="outlined">
-          <CardContent>
-            <Typography variant="h5" component='h2' color={'#0f1f33'} sx={{ "&:hover": { color: "gray" }}}>
-              {Text}
-            </Typography>
-            {Icon}
-          </CardContent>
-        </Card>
-      </ButtonBase>
-    </>
+    <Grid container spacing={1}>
+      {categories.map((category) => {
+        return (
+          <Grid item>
+            <MenuCardItem
+              title={category.title}
+              icon={category.icon}
+              onClick={category.onClick}
+            />
+          </Grid>
+        );
+      })}
+    </Grid>
   );
 };
