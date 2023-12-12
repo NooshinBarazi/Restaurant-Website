@@ -1,0 +1,41 @@
+.swiper-button-next,
+.swiper-button-prev {
+  color: gray;
+}
+.swiper-pagination-bullet {
+  background-color: gray;
+}
+
+.slider-container {
+  height: 51.9rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+.slide-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-image {
+  height: 51.9rem;
+  width: 100%;
+  z-index: 2;
+}
+/* Add this class to apply the blur effect on the left and right sides */
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4%;
+  content: "";
+  z-index: 1;
+  backdrop-filter: blur(7px);
+}
+.left-blur {
+  left: 0;
+}
+
+.right-blur {
+  right: 0;
+}
