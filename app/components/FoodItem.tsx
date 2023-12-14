@@ -30,7 +30,6 @@ export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) =>
             style={{
               fontSize: "1.4rem",
               fontWeight: "600",
-              fontFamily: "IranYekan",
               whiteSpace: "nowrap",
               overflow: "hidden",
               textOverflow: "ellipsis",
@@ -40,7 +39,6 @@ export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) =>
           </p>
           <Typography
             style={{
-              fontFamily: "IranYekan",
               whiteSpace: "nowrap",
               overflow: "hidden",
               textOverflow: "ellipsis",
@@ -52,7 +50,7 @@ export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) =>
           >
             {ingredients}
           </Typography>
-          <Typography sx={{ fontSize: "1.4rem", fontFamily: "IranYekan" }}>
+          <Typography sx={{ fontSize: "1.4rem"}}>
             {price} تومان
           </Typography>
         </CardContent>

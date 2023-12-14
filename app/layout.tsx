@@ -1,23 +1,11 @@
-
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import path from "path";
-import { CssBaseline, ThemeProvider, createTheme} from "@mui/material";
-import localfont from "next/font/local";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import Theme from "@/theme/Theme";
 
 const inter = Inter({ subsets: ["latin"] });
-
-const IranYekan = localfont({
-  src: [{ path: "../public/fonts/Qs_Iranyekan bold.ttf", weight: "700" }],
-  variable: "--font-IranYekan",
-});
-
-// const theme = createTheme({
-//   typography: {
-//     fontFamily: IranYekan.style.fontFamily,
-//   },
-// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,9 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="rtl">
-      <body className={IranYekan.variable}>
-        {children}
-      </body>
+      <Theme>
+        <body className={inter.className}>{children}</body>
+      </Theme>
     </html>
   );
 }
