@@ -1,0 +1,36 @@
+.category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.new-category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.category-title {
+  padding: 0.5rem 1rem;
+  background: white;
+}
+.line-divider {
+  height: 1px;
+  background: #eaeef5;
+  flex: 1 1;
+  margin: 0 1rem;
+}
+.arrow-left,
+.arrow-right {
+  background-color: #b9b9b9 !important;
+  padding: 0.5rem;
+  color: black;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+

@@ -72,10 +72,10 @@
     --card-border-rgb: 200, 200, 200;
   }
 }
-@font-face {
+/* @font-face {
   font-family: 'IranYekan';
   src: local('Qs_Iranyekan bold'), url('../public/fonts/Qs_Iranyekan bold.ttf') format('truetype');
-}
+} */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -86,7 +86,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: var(--font-IranYekan), 'IranYekan', sans-serif;
+  /* font-family: var(--font-IranYekan), 'IranYekan', sans-serif; */
 }
 
 body {

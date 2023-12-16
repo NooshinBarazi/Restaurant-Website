@@ -1,10 +1,10 @@
 "use client";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline, ThemeOptions, createTheme } from "@mui/material";
-import localfont from "next/font/local";
+import localFont from "next/font/local";
 import { NextAppDirEmotionCacheProvider } from "./EmotionCashe";
 
-const IranYekan = localfont({
+const IranYekan = localFont({
   src: [
     { path: "../public/fonts/Qs_Iranyekan bold.ttf", weight: "700" },
     { path: "../public/fonts/Qs_Iranyekan medium.ttf", weight: "500" },
