@@ -68,7 +68,7 @@ export default function Home() {
       title: " سالاد خاتون / khatoon salad",
       ingredients:
         " میکس کاهو، ریحان، گوجه، خیار، فلفل دلمه کبابی، پیازچه، پنیر فتا، مرغ گریل شده، گردو، سس مه لقا Lettuce mix, basil, tomato, cucumber, grilled bell pepper, onion, feta cheese, grilled chicken, walnuts,Mehlaqa sauce",
-      price: "145,000",
+      price: 125000,
     },
     {
       id: "2",
@@ -76,7 +76,7 @@ export default function Home() {
       title: "spice wings/ بال اسپایسی",
       ingredients:
         " میکس کاهو، ریحان، گوجه، خیار، فلفل دلمه کبابی، پیازچه، پنیر فتا، مرغ گریل شده، گردو، سس مه لقا Lettuce mix, basil, tomato, cucumber, grilled bell pepper, onion, feta cheese, grilled chicken, walnuts,Mehlaqa sauce",
-      price: "145,000",
+      price: 175000,
     },
     {
       id: "3",
@@ -84,7 +84,7 @@ export default function Home() {
       title: "khatoon salad/ سالاد خاتون",
       ingredients:
         " میکس کاهو، ریحان، گوجه، خیار، فلفل دلمه کبابی، پیازچه، پنیر فتا، مرغ گریل شده، گردو، سس مه لقا Lettuce mix, basil, tomato, cucumber, grilled bell pepper, onion, feta cheese, grilled chicken, walnuts,Mehlaqa sauce",
-      price: "145,000",
+      price: 15000,
     },
     {
       id: "4",
@@ -92,7 +92,7 @@ export default function Home() {
       title: "spice wings/ بال اسپایسی",
       ingredients:
         " میکس کاهو، ریحان، گوجه، خیار، فلفل دلمه کبابی، پیازچه، پنیر فتا، مرغ گریل شده، گردو، سس مه لقا Lettuce mix, basil, tomato, cucumber, grilled bell pepper, onion, feta cheese, grilled chicken, walnuts,Mehlaqa sauce",
-      price: "145,000",
+      price: 14000,
     },
     {
       id: "5",
@@ -100,7 +100,7 @@ export default function Home() {
       title: "spice wings/ بال اسپایسی",
       ingredients:
         " میکس کاهو، ریحان، گوجه، خیار، فلفل دلمه کبابی، پیازچه، پنیر فتا، مرغ گریل شده، گردو، سس مه لقا Lettuce mix, basil, tomato, cucumber, grilled bell pepper, onion, feta cheese, grilled chicken, walnuts,Mehlaqa sauce",
-      price: "145,000",
+      price: 1000
     },
   ];
 

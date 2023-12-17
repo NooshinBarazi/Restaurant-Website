@@ -5,7 +5,7 @@ export interface FoodProps {
   image: string;
   title: string;
   ingredients: string;
-  price: string;
+  price: number;
 }
 
 export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) => {
@@ -44,8 +44,8 @@ export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) =>
           >
             {ingredients}
           </Typography>
-          <Typography sx={{ fontSize: "1.4rem"}}>
-            {price} تومان
+          <Typography sx={{ fontSize: "2.4rem", fontWeight: '500'}}>
+            {Number(price).toLocaleString('fa-ir')} <span style={{fontSize: '1.4rem'}}>تومان</span>
           </Typography>
         </CardContent>
       </Card>
