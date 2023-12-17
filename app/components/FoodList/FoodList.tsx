@@ -1,7 +1,7 @@
 import "./FoodList.css";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FoodItem, FoodProps } from "../FoodItem";
+import { FoodItem, FoodProps } from "./FoodItem";
 import { IconButton } from "@mui/material";
 import { Navigation, Pagination, Scrollbar, A11y, EffectFade,} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,10 +24,10 @@ export const FoodList = ({ foods }: Props) => {
         <div className="line-divider"></div>
         <div className="button-container">
           <IconButton className='arrow-right'>
-            <ArrowForwardIosIcon fontSize="small" style={{ color: "black" }} />
+            <ArrowForwardIosIcon fontSize="large" style={{ color: "black" }} />
           </IconButton>
           <IconButton className='arrow-left'>
-            <ArrowBackIosIcon fontSize="small" style={{ color: "black" }} />
+            <ArrowBackIosIcon fontSize="large" style={{ color: "black" }} />
           </IconButton>
         </div>
       </div>

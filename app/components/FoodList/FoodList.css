@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  font-family: 'IranYekan';
 }
 .new-category {
   display: flex;
@@ -11,6 +12,7 @@
 .category-title {
   padding: 0.5rem 1rem;
   background: white;
+  font-size: 2.4rem;
 }
 .line-divider {
   height: 1px;
@@ -23,8 +25,8 @@
   background-color: #b9b9b9 !important;
   padding: 0.5rem;
   color: black;
-  width: 60px;
-  height: 60px;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
 }
 
@@ -32,5 +34,3 @@
   display: flex;
   gap: 10px;
 }
-
-

@@ -1,10 +1,4 @@
-import {
-  ButtonBase,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import {ButtonBase,Card,CardContent,CardMedia,Typography} from "@mui/material";
 
 export interface FoodProps {
   id: string;
@@ -17,7 +11,7 @@ export interface FoodProps {
 export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) => {
   return (
     <ButtonBase sx={{ marginRight: "2rem", maxWidth: "323px" }} id={id}>
-      <Card sx={{ padding: "1.5rem" }}>
+      <Card sx={{ padding: "1.5rem"}}>
         <CardMedia
           component="img"
           image={image}
@@ -26,9 +20,9 @@ export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) =>
           sx={{ borderRadius: "8px" }}
         />
         <CardContent style={{ textAlign: "center" }}>
-          <p
+          <Typography
             style={{
-              fontSize: "1.4rem",
+              fontSize: "1.8rem",
               fontWeight: "600",
               whiteSpace: "nowrap",
               overflow: "hidden",
@@ -36,7 +30,7 @@ export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) =>
             }}
           >
             {title}
-          </p>
+          </Typography>
           <Typography
             style={{
               whiteSpace: "nowrap",
@@ -56,8 +50,5 @@ export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) =>
         </CardContent>
       </Card>
     </ButtonBase>
-    // <div style={{maxWidth: '323px'}}>
-
-    // </div>
   );
 };
