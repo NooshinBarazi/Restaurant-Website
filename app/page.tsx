@@ -2,8 +2,6 @@
 import { Container } from "@mui/material";
 import RamenDiningIcon from "@mui/icons-material/RamenDining";
 import { FoodList } from "./components/FoodList/FoodList";
-import MenuList from "./components/MenuList";
-import { ImageSlider } from "./components/ImageSlider/ImageSlider";
 
 export default function Home() {
   const categories = [
@@ -108,8 +106,6 @@ export default function Home() {
 
   return (
     <Container>
-      <MenuList />
-      <ImageSlider />
       <FoodList foods={foods} />
     </Container>
   );
