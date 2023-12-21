@@ -6,10 +6,10 @@ import { NextAppDirEmotionCacheProvider } from "./EmotionCashe";
 
 const IranYekan = localFont({
   src: [
-    { path: "../public/fonts/Qs_Iranyekan bold.ttf", weight: "700" },
-    { path: "../public/fonts/Qs_Iranyekan medium.ttf", weight: "500" },
-    { path: "../public/fonts/Qs_Iranyekan light.ttf", weight: "400" },
-    { path: "../public/fonts/Qs_Iranyekan thin.ttf", weight: "300" },
+    { path: "../public/fonts/Qs_Iranyekan bold.ttf"},
+    { path: "../public/fonts/Qs_Iranyekan medium.ttf"},
+    // { path: "../public/fonts/Qs_Iranyekan light.ttf",},
+    // { path: "../public/fonts/Qs_Iranyekan thin.ttf",},
   ],
   variable: "--font-IranYekan",
 });
@@ -17,20 +17,26 @@ const IranYekan = localFont({
 const themeOption: ThemeOptions = {
   typography: {
     fontFamily: IranYekan.style.fontFamily,
+    button: {
+      textColor: '#fff',
+      fontSize: 18,
+    }
   },
- 
-  //   palette: {
-  //     background: {
-
-  //       default: "#f8bbd0",
-  //     },
-  //     primary: {
-  //       main: "#1976d2",
-  //     },
-  //     text: {
-  //       primary: "#300000",
-  //     },
-  //   },
+  palette: {
+    background: { 
+      // default: "#fff"
+    },
+    primary: {
+      main: "#b8a870",
+    },
+    secondary: {
+      main: '#fff'
+    },
+    text: {
+      primary: "#000",
+      secondary: "#00000080",
+    },
+  },
 };
 
 const theme = createTheme(themeOption);

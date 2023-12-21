@@ -1,4 +1,5 @@
-import {ButtonBase,Card,CardContent,CardMedia,Typography} from "@mui/material";
+'use client'
+import {ButtonBase,Card,CardContent,CardMedia, Typography} from "@mui/material";
 
 export interface FoodProps {
   id: string;
@@ -9,6 +10,7 @@ export interface FoodProps {
 }
 
 export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) => {
+
   return (
     <ButtonBase sx={{ marginRight: "2rem", maxWidth: "323px" }} id={id}>
       <Card sx={{ padding: "1.5rem"}}>
