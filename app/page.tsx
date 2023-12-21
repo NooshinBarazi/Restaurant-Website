@@ -1,7 +1,9 @@
 "use client";
-import { Container } from "@mui/material";
+import { Container, Modal } from "@mui/material";
 import RamenDiningIcon from "@mui/icons-material/RamenDining";
 import { FoodList } from "./components/FoodList/FoodList";
+import RegisterModal from "./components/Register";
+import { useState } from "react";
 
 export default function Home() {
   const categories = [
@@ -104,9 +106,20 @@ export default function Home() {
     },
   ];
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <Container>
-      <FoodList foods={foods} />
+      <button onClick={openModal}>send</button>
+      <RegisterModal open={isModalOpen} onClose={closeModal} />
     </Container>
   );
 }
