@@ -14,11 +14,10 @@ const useStyles = makeStyles({
         justifyContent: 'flex-start',
         border: '1px solid red',
         alignItems: 'center',
-        // maxWidth: '50%'
     },
     listItemText: {
        maxWidth: 'max-content',
-       marginLeft: '15px'
+       marginLeft: '20px'
 
     },
 })
