@@ -26,7 +26,7 @@ export const ImageSlider = () => {
         modules={[Autoplay, Navigation, Pagination]}
       >
         {images.map((img) => (
-          <SwiperSlide className="slide-container">
+          <SwiperSlide className="slide-container" key={img}>
             <span className="blur-overlay left-blur"></span>
             <img
               src={img}

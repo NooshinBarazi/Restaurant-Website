@@ -39,7 +39,7 @@ export const FoodList = ({ foods }: Props) => {
         >
           {foods.map((food) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={food.id}>
                 <FoodItem
                   key={food.id}
                   id={food.id}
