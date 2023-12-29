@@ -1,11 +1,19 @@
-"use client";
-import { Container, Modal } from "@mui/material";
-import RamenDiningIcon from "@mui/icons-material/RamenDining";
-import { FoodList } from "./components/FoodList/FoodList";
-import RegisterModal from "./components/Register";
-import { useState } from "react";
 
-export default function Home() {
+import RamenDiningIcon from "@mui/icons-material/RamenDining";
+import Landing from "./Landing";
+
+
+// export async function getStaticProps() {
+//   const res = await fetch("http://37.32.21.146:8080/shop");
+//   const data = res.json();
+
+//   return {
+//     props: { data },
+//   };
+// }
+
+export default function Home({ data }: any) {
+  console.log(data);
   const categories = [
     {
       title: "سالادها",
@@ -102,24 +110,19 @@ export default function Home() {
       title: "spice wings/ بال اسپایسی",
       ingredients:
         " میکس کاهو، ریحان، گوجه، خیار، فلفل دلمه کبابی، پیازچه، پنیر فتا، مرغ گریل شده، گردو، سس مه لقا Lettuce mix, basil, tomato, cucumber, grilled bell pepper, onion, feta cheese, grilled chicken, walnuts,Mehlaqa sauce",
-      price: 1000
+      price: 1000,
     },
   ];
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+  // const openModal = () => {
+  //   setIsModalOpen(true);
+  // };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
-  return (
-    <Container>
-      <button onClick={openModal}>send</button>
-      <RegisterModal open={isModalOpen} onClose={closeModal} />
-    </Container>
-  );
+  return <Landing />;
 }
