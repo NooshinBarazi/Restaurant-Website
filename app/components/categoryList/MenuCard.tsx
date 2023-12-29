@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const MenuCard = ({ categories }: Props) => {
-  console.log("Categories in MenuCard:", categories);
+  
   return (
     <Tabs scrollButtons="auto" variant="scrollable" value={0}>
       {categories.map((category) => {

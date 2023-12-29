@@ -8,7 +8,7 @@ export interface CategoryProps {
 }
 
 export const MenuCardItem = ({ title, icon, onClick }: CategoryProps) => {
-  console.log(icon);
+  
   return (
     <>
       <ButtonBase onClick={onClick} sx={{ marginRight: '1rem' }}>

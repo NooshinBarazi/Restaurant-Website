@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState: any = {
   categories: [],
   servicesForCategories: [],
+  sliderImages: [],
 };
 
 export const getFoods = createAsyncThunk(
@@ -25,7 +26,6 @@ const foodsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getFoods.fulfilled, (state, action)=>{
       return { ...state, ...action.payload };
-        // const { categories, discountOffers, servicesForCategories, sliderImages } = action.payload;
 
     }).addCase(getFoods.rejected, (state, action)=>{})
   },
