@@ -6,7 +6,6 @@ export interface FoodProps {
   image: string;
   title: string;
   ingredients: string;
-  category: number;
   price: number;
 }
 
@@ -18,8 +17,7 @@ export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) =>
         <CardMedia
           component="img"
           image={image}
-          width={"284px"}
-          height={'284px'}
+          width={"100%"}
           alt="Paella dish"
           sx={{ borderRadius: "8px" }}
         />

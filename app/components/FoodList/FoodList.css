@@ -20,7 +20,8 @@
   flex: 1 1;
   margin: 0 1rem;
 }
-.swiper-navigation-button {
+.arrow-left,
+.arrow-right {
   background-color: #b9b9b9 !important;
   padding: 0.5rem;
   color: black;

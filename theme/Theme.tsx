@@ -24,7 +24,7 @@ const themeOption: ThemeOptions = {
   },
   palette: {
     background: { 
-      // default: ""
+      // default: "#fff"
     },
     primary: {
       main: "#b8a870",
@@ -37,7 +37,6 @@ const themeOption: ThemeOptions = {
       secondary: "#00000080",
     },
   },
-  
 };
 
 const theme = createTheme(themeOption);

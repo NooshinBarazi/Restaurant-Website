@@ -1,54 +1,45 @@
- import { Divider, List, ListItem, ListItemText, Box } from '@mui/material';
+'use client'
+//  import { List, ListItem, ListItemText } from '@mui/material';
+ import { List, ListItem, ListItemText } from '@mui/material';
  import { makeStyles } from '@mui/styles';
- import HomeIcon from '@mui/icons-material/Home';
-//   import NextLink from 'next/link';
-  import Link from '@mui/material/Link';
-  
+import Theme from '@/theme/Theme';
+// import { makeStyles } from '@mui/system';
+
+// import {makeStyles} from '@mui/system';
+
+
 const useStyles = makeStyles({
     menuList: {
         display: 'flex',
         justifyContent: 'flex-start',
-        height: '70px',
-        marginTop: '20px',
-        borderBottom: '1px solid #E8E8E8'
+        border: '1px solid red',
+        alignItems: 'center',
     },
     listItemText: {
        maxWidth: 'max-content',
-       marginLeft: '20px',
-       fontSize: '20px',
-       textDecoration: 'none',
-       color: '#000',
-       textDecorationLine: 'none'
-    },
-    homeLink:{
-        marginLeft: '15px',
-        marginTop: '5px',
-        textAlign: 'center',
-        lineHeight: '30px',
+       marginLeft: '20px'
 
-},
-    divider:{
-        backgroundColor: '#b8a870',
-        height:'3px',
-         width: '30px',
-         marginTop: '18px'
     },
-    dividerLine: {
-    }
 })
 
 export default function MenuList() {
+    console.log('before')
     const classes = useStyles();
+    console.log(classes, 'classess')
+
     return(
-        <List className={classes.menuList} color='text.secondary' >
-            <Link href='/#' className={classes.homeLink} >
-                <HomeIcon color='primary' fontSize='large' />
-                <Divider  className={classes.divider} />  
-            </Link>
-              <Link href='/#'  className={classes.listItemText}  >ساعت&zwnj;های کاری</Link>
-              <Link href='/#'  className={classes.listItemText}  >تماس با ما و درباره ما</Link>
-              {/* <Link href='/#' component={NextLink} className={classes.listItemText}  >رویدادها</Link> */}
-              <Link href='/#' className={classes.listItemText}  >رویدادها</Link>
+        
+        <List className={classes.menuList}>
+          <ListItem disablePadding  className={classes.listItemText} >
+              <ListItemText  primary="ساعت های کاری" />
+          </ListItem>
+          <ListItem className={classes.listItemText} disablePadding>
+              <ListItemText  primary="تماس با ما و درباره ما" />
+          </ListItem>
+          <ListItem className={classes.listItemText} disablePadding>
+              <ListItemText  primary="رویدادها" />
+          </ListItem>
           </List>
     )
+
 }

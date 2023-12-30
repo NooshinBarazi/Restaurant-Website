@@ -5,17 +5,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./ImageSlider.css";
 
+const images = [
+  "/assets/images/merchantSlide1.webp",
+  "/assets/images/merchantSlide2.webp",
+  "/assets/images/merchantSlide3.webp",
+  "/assets/images/merchantSlide4.webp",
+];
 
-interface SliderImage {
-  id: number;
-  image_path: string;
-}
-
-interface SliderProps {
-  imageSlider: SliderImage[];
-}
-export const ImageSlider = ({ imageSlider }: SliderProps) => {
-
+export const ImageSlider = () => {
   return (
     <div className="slider-container">
       <Swiper
@@ -28,11 +25,11 @@ export const ImageSlider = ({ imageSlider }: SliderProps) => {
         }}
         modules={[Autoplay, Navigation, Pagination]}
       >
-        {imageSlider.map((image: any) => (
-          <SwiperSlide className="slide-container" key={image.id}>
+        {images.map((img) => (
+          <SwiperSlide className="slide-container">
             <span className="blur-overlay left-blur"></span>
             <img
-              src={image.image_path}
+              src={img}
               className="slide-image"
             />
             <span className="blur-overlay right-blur"></span>
