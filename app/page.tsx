@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Landing from "./Landing";
+
 
 
 export default function Home() {
 
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // const openModal = () => {
   //   setIsModalOpen(true);
