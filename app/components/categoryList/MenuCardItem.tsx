@@ -1,23 +1,24 @@
 import { ButtonBase, Typography, Card, CardContent } from "@mui/material";
-import { ReactNode } from "react";
 
 export interface CategoryProps {
+  id: number;
   title: string;
-  icon: ReactNode;
+  icon: string;
   onClick: () => void;
 }
 
 export const MenuCardItem = ({ title, icon, onClick }: CategoryProps) => {
+  
   return (
     <>
       <ButtonBase onClick={onClick} sx={{ marginRight: '1rem' }}>
-        <Card variant="outlined">
-          <CardContent>
+        <Card variant="outlined" sx={{padding: '0 1rem'}}>
+          
             <Typography variant="h5" component='h2' color={'textPrimary'} sx={{ "&:hover": { color: "gray" }}}>
               {title}
             </Typography>
-            {icon}
-          </CardContent>
+            <img src={icon} width={53} height={39}/>
+         
         </Card>
       </ButtonBase>
     </>
