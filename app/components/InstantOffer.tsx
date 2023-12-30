@@ -3,17 +3,17 @@ import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import CircularProgress from '@mui/material/CircularProgress';
 import Image from "next/image";
-import confetti from '../../public/assets/images/confetti.png'
-
+import confetti from '../../public/assets/images/confetti.png';
+import ImagePlaceholder  from './ImagePlaceholder';
 
 const useStyle = makeStyles({
     box:{
         width: '330px',
-        height: '520px', 
+        height: '550px', 
         backgroundColor: '#b8a870',
         borderRadius: '20px',
-        display: 'flex',
-        justifyContent: 'space-between'
+        marginTop: '20px',
+        paddingTop: '20px'
     },
     offer:{
         fontSize: '16px',
@@ -40,7 +40,9 @@ const useStyle = makeStyles({
     }
 })
 
+
 const CircularCounter = () => {
+
   const classes = useStyle()
   const [counter, setCounter] = React.useState(60)
   React.useEffect(()=>{
@@ -60,7 +62,7 @@ const CircularCounter = () => {
   }, [])
 
   return(
-    <div style={{position: 'relative', display: 'inline-block', left:'10px', top: '-12px'}}>
+    <div style={{position: 'relative', display: 'inline-block', left:'10px'}}>
       <CircularProgress
     variant='determinate'
     value={100 - (counter / 60) * 100}
@@ -80,30 +82,70 @@ variant="determinate"
 
 }
 
-
-
-
-
-
-
-
-
 export default function InstanceOffer () {
-  const classes = useStyle()
+  const classes = useStyle();
+
+  const [loading, setLoading] = React.useState(true)
+  const [imgUrl, setImgUrl] = React.useState('')
+  const [caption, setCaption] = React.useState('')
+  const [respi, setRespi] = React.useState('')
+  const [price, setPrice] = React.useState('')
+
+  React.useEffect(()=>{
+    const fetchData = async () =>{
+      const response = await fetch('https://fakestoreapi.com/products')
+    
+
+      const data =  await response.json()
+
+      data.map((item: any)=>{
+        {
+          setInterval(()=>{
+            
+            setImgUrl(item.image)
+            setCaption(item.title)
+            setRespi(item.title)
+            setPrice(item.price)
+          }, 60000)
+          setImgUrl(item.image)
+          setCaption(item.title)
+          setRespi(item.title)
+          setPrice(item.price)
+          setLoading(false)
+        }
+      })
+
+      const randomData = Math.floor(Math.random() * (data.length - 1))
+      console.log(randomData);
+
+      setInterval(() =>{
+        data.forEach((list: any) =>{
+          setImgUrl(list.image)
+          console.log('60 second');
+          
+        })
+       
+      }, 60000)
+      }
+      fetchData();
+  }, [])
 
     return(
         <>
-        <Box className={classes.box} >
-            <Box sx={{display: 'flex', gap:'5px', marginRight: '-10px'}}>
-                <Image
+        <Box className={classes.box}  >
+            <Box sx={{display: 'flex', justifyContent: 'space-between', marginBottom:  '20px'}}   >
+               <Box sx={{display: 'flex', gap: '15px', marginRight: '-10px'}} >
+               <Image
                  src={confetti}
                  alt="confeetti pic"
                  width={50}
                  height={50}
                 />
                 <Typography variant="h2" className={classes.offer} >پیشنهاد لحظه&zwnj;ای</Typography>
-            </Box>
+               </Box>
             <CircularCounter />
+            </Box>
+            <ImagePlaceholder  loading={loading} imgUrl={imgUrl} caption={caption} respi={respi} price={price} />
         </Box>
         </>
     )

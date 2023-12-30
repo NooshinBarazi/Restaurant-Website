@@ -4,6 +4,11 @@ import RamenDiningIcon from "@mui/icons-material/RamenDining";
 import { FoodList } from "./components/FoodList/FoodList";
 import RegisterModal from "./components/Register";
 import { useState } from "react";
+import InstanceOffer from "./components/InstantOffer";
+import '../app/globals.css';
+// import '../src/global.css';
+
+
 
 export default function Home() {
   const categories = [
@@ -118,8 +123,10 @@ export default function Home() {
 
   return (
     <Container>
-      <button onClick={openModal}>send</button>
-      <RegisterModal open={isModalOpen} onClose={closeModal} />
+      {/* <button onClick={openModal}>send</button>
+      <RegisterModal open={isModalOpen} onClose={closeModal} /> */}
+      <InstanceOffer />
     </Container>
   );
 }
+``
