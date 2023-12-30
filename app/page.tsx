@@ -1,4 +1,6 @@
+// import { useState } from "react";
 import Landing from "./Landing";
+
 
 
 export default function Home() {
@@ -12,6 +14,6 @@ export default function Home() {
   // const closeModal = () => {
   //   setIsModalOpen(false);
   // };
-  
-  return <Landing />;
+
+  return  <Landing />
 }

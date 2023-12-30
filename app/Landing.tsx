@@ -18,7 +18,7 @@ export default function Landing() {
   useEffect(() => {
     dispatch(getFoods());
   }, [dispatch]);
-console.log('slider', sliderImages)
+console.log('foods', servicesForCategories)
   return (
     <Container>
       <MenuList />

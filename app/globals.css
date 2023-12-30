@@ -88,6 +88,9 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-image: url('../public/assets/images/background.webp');
+  background-repeat: repeat;
+  /* position: fixed; */
   /* font-family: var(--font-IranYekan), 'IranYekan', sans-serif; */
 }
 
