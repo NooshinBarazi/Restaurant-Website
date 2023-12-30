@@ -1,5 +1,4 @@
 // import { useState } from "react";
-import { Container } from "@mui/material";
 import Landing from "./Landing";
 
 
@@ -16,8 +15,5 @@ export default function Home() {
   //   setIsModalOpen(false);
   // };
 
-  return  (
-    <Container>
-    </Container>
-  );
+  return  <Landing />
 }
