@@ -12,6 +12,5 @@ export default function Home() {
   // const closeModal = () => {
   //   setIsModalOpen(false);
   // };
-
   return <Landing />;
 }
