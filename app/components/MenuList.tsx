@@ -16,7 +16,9 @@ const useStyles = makeStyles({
        marginLeft: '20px',
        fontSize: '20px',
        textDecoration: 'none',
-       color: '#000'
+       color: '#000',
+    //    textDecoration: 'none',
+       textDecorationLine: 'none'
     },
     homeLink:{
         marginLeft: '15px',
