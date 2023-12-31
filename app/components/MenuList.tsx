@@ -10,7 +10,8 @@ const useStyles = makeStyles({
         justifyContent: 'flex-start',
         height: '70px',
         marginTop: '20px',
-        borderBottom: '1px solid #E8E8E8'
+        borderBottom: '1px solid #E8E8E8',
+        marginBottom: '30px'
     },
     listItemText: {
        maxWidth: 'max-content',
