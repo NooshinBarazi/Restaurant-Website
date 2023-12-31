@@ -2,7 +2,7 @@ import "./FoodList.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FoodItem, FoodProps } from "./FoodItem";
-import { IconButton } from "@mui/material";
+import { Container, IconButton } from "@mui/material";
 import {Navigation} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -24,17 +24,18 @@ export const FoodList = ({ foods, categories }: Props) => {
       {categories.map((category) => {
         return (
           <>
-            <div className="new-category">
+          <Container>
+            <div className="new-category" id={`category-${category.id}`}>
               <h3 className="category-title">{category.category_title}</h3>
               <div className="line-divider"></div>
               <div className="button-container">
                 <NavigationButtons categoryId={category.id} />
               </div>
-            </div>
-            <div>
+            </div></Container>
+            <div style={{marginRight: '78px'}}>
               <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
+                slidesPerView={3.5}
+                spaceBetween={20}
                 navigation={{
                   nextEl: `.swiper-button-next-${category.id}`,
                   prevEl: `.swiper-button-prev-${category.id}`,

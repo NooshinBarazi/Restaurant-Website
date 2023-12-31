@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 2rem;
   font-family: 'IranYekan';
+  margin-right: auto;
 }
 .new-category {
   display: flex;
