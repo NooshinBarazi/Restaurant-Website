@@ -7,6 +7,7 @@ import { FoodList } from "./components/FoodList/FoodList";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { getFoods } from "@/redux/features/foods/foodsSlice";
 import { useEffect } from "react";
+import { HeroSection } from "./components/HeroSection";
 
 export default function Landing() {
   const dispatch = useAppDispatch();
@@ -14,17 +15,19 @@ export default function Landing() {
     (state) => state.foods
   );
 
-  
   useEffect(() => {
     dispatch(getFoods());
   }, [dispatch]);
-console.log('foods', servicesForCategories)
+  console.log("foods", servicesForCategories);
   return (
-    <Container>
-      <MenuList />
-      <MenuCard categories={categories} />
-      <ImageSlider imageSlider={sliderImages}/>
+    <>
+      <Container>
+        <MenuList />
+        <MenuCard categories={categories} />
+        {/* <ImageSlider imageSlider={sliderImages}/> */}
+        <HeroSection />
+      </Container>
       <FoodList foods={servicesForCategories} categories={categories} />
-    </Container>
+    </>
   );
 }

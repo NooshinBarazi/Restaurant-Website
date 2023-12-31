@@ -11,7 +11,8 @@ const useStyles = makeStyles({
        height: '70px',
        marginTop: '20px',
        borderBottom: '1px solid #E8E8E8',
-       marginBottom: '30px'
+       marginBottom: '30px',
+       backgroundColor: '#fff'
    },
    listItemText: {
       maxWidth: 'max-content',
