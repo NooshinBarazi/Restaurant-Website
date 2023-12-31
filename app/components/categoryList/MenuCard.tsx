@@ -21,7 +21,6 @@ export const MenuCard = ({ categories }: Props) => {
               id={category.id}
               title={category.category_title}
               icon={category.category_icon}
-              onClick={category.onClick}
             />
           </Link>
         );
