@@ -5,15 +5,16 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Image from "next/image";
 import confetti from '../../public/assets/images/confetti.png';
 import ImagePlaceholder  from './ImagePlaceholder';
+import { useAppSelector } from '@/redux/store';
 
 const useStyle = makeStyles({
     box:{
-        width: '330px',
-        height: '550px', 
+        width: '33%',
+        height: '51.9rem', 
         backgroundColor: '#b8a870',
         borderRadius: '20px',
         marginTop: '20px',
-        paddingTop: '20px'
+        paddingTop: '20px',
     },
     offer:{
         fontSize: '16px',
@@ -83,6 +84,7 @@ variant="determinate"
 }
 
 export default function InstanceOffer () {
+  const {discountOffers, servicesForCategories} = useAppSelector(state=> state.foods)
   const classes = useStyle();
 
   const [loading, setLoading] = React.useState(true)
@@ -91,44 +93,46 @@ export default function InstanceOffer () {
   const [respi, setRespi] = React.useState('')
   const [price, setPrice] = React.useState('')
 
-  React.useEffect(()=>{
-    const fetchData = async () =>{
-      const response = await fetch('https://fakestoreapi.com/products')
+  // React.useEffect(()=>{
+  //   const fetchData = async () =>{
+  //     const response = await fetch('https://fakestoreapi.com/products')
     
 
-      const data =  await response.json()
+  //     const data =  await response.json()
 
-      data.map((item: any)=>{
-        {
-          setInterval(()=>{
+  //     discountOffers.map((item: any)=>{
+  //       {
+  //         setInterval(()=>{
             
-            setImgUrl(item.image)
-            setCaption(item.title)
-            setRespi(item.title)
-            setPrice(item.price)
-          }, 60000)
-          setImgUrl(item.image)
-          setCaption(item.title)
-          setRespi(item.title)
-          setPrice(item.price)
-          setLoading(false)
-        }
-      })
+  //           setImgUrl(item.image)
+  //           setCaption(item.title)
+  //           setRespi(item.title)
+  //           setPrice(item.price)
+  //         }, 60000)
+  //         setImgUrl(item.image)
+  //         setCaption(item.title)
+  //         setRespi(item.title)
+  //         setPrice(item.price)
+  //         setLoading(false)
+  //       }
+  //     })
 
-      const randomData = Math.floor(Math.random() * (data.length - 1))
-      console.log(randomData);
+  //     const randomData = Math.floor(Math.random() * (data.length - 1))
+  //     console.log(randomData);
 
-      setInterval(() =>{
-        data.forEach((list: any) =>{
-          setImgUrl(list.image)
-          console.log('60 second');
+  //     setInterval(() =>{
+  //       data.forEach((list: any) =>{
+  //         setImgUrl(list.image)
+  //         console.log('60 second');
           
-        })
+  //       })
        
-      }, 60000)
-      }
-      fetchData();
-  }, [])
+  //     }, 60000)
+  //     }
+  //     fetchData();
+  // }, [])
+
+  console.log('offer', discountOffers)
 
     return(
         <>

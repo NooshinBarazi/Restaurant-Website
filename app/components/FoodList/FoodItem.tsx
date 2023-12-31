@@ -13,8 +13,8 @@ export interface FoodProps {
 export const FoodItem = ({ image, title, ingredients, price , id}: FoodProps) => {
 
   return (
-    <ButtonBase sx={{ marginRight: "2rem", maxWidth: "323px" }} id={id}>
-      <Card sx={{ padding: "1.5rem"}}>
+    <ButtonBase sx={{ marginRight: "2rem", maxWidth: "323px" }}>
+      <Card sx={{ padding: "1.5rem",}}>
         <CardMedia
           component="img"
           image={image}

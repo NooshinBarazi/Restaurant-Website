@@ -90,18 +90,18 @@ body {
   overflow-x: hidden;
   background-image: url('../public/assets/images/background.webp');
   background-repeat: repeat;
-  /* position: fixed; */
+ 
   /* font-family: var(--font-IranYekan), 'IranYekan', sans-serif; */
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 a {
