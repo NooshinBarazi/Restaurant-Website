@@ -20,7 +20,7 @@ type Params = {
     }
     return(
         <figure style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center'}} >
-            <img src={imgUrl} width="280" height="290" />
+            <img src={imgUrl} width="280" height="290" style={{borderRadius: '10px'}} />
             <Typography >{caption} test</Typography>
             <Typography variant="body2" color='text.secondary' >{respi}</Typography>
             <Typography sx={{marginBottom: '30px'}}>{price}تومان</Typography>
