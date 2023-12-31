@@ -14,6 +14,7 @@ export default function Landing() {
     (state) => state.foods
   );
 
+  
   useEffect(() => {
     dispatch(getFoods());
   }, [dispatch]);
