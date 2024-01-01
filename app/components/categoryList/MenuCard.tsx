@@ -12,7 +12,6 @@ export const MenuCard = ({ categories }: Props) => {
       scrollButtons="auto"
       variant="scrollable"
       value={0}
-      sx={{ backgroundColor: "#fff" }}
     >
       {categories.map((category) => {
         return (
