@@ -1,5 +1,9 @@
 // import { useState } from "react";
+'use client'
+import { useState } from "react";
 import Landing from "./Landing";
+import RegisterModal from "./components/Register";
+import { Login } from "./components/Login";
 
 
 
@@ -16,4 +20,11 @@ export default function Home() {
   // };
 
   return  <Landing />
+  // return(
+  //   <>
+  //   <button onClick={openModal}>send</button>
+  //    <RegisterModal open={isModalOpen} onClose={closeModal} />
+  //    <Login />
+  //    </>
+  //    )
 }

@@ -19,10 +19,15 @@ interface RegisterModalProps {
 const RegisterModal = ({ open, onClose }: RegisterModalProps) => {
   const { register, handleSubmit } = useForm<RegisterForm>();
 
+  
+
+  const onCloseModal = () => {
+    alert("onCloseModal");
+  };
+
   const onSubmit: SubmitHandler<RegisterForm> = (data: any) => {
-    
     console.log("Form submitted:", data);
-    onClose(); 
+    onClose();
   };
 
   return (
@@ -42,6 +47,7 @@ const RegisterModal = ({ open, onClose }: RegisterModalProps) => {
         }}
       >
         <IconButton
+          onClick={onCloseModal}
           aria-label="close"
           sx={{
             position: "absolute",
@@ -79,10 +85,10 @@ const RegisterModal = ({ open, onClose }: RegisterModalProps) => {
                 textAlign: "right",
                 fontSize: "1rem",
               },
-              
-            }}variant="filled"
+            }}
+            variant="filled"
           />
-          
+
           <Button
             type="submit"
             variant="contained"
