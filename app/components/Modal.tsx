@@ -10,9 +10,10 @@ import CloseIcon from "@mui/icons-material/Close";
 interface DialogProps{
     title: string;
     textButton: string;
+    children: React.ReactNode
 }
 
-export default function FormDialog({title, textButton}: DialogProps) {
+export default function FormDialog({title, textButton, children}: DialogProps) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -42,10 +43,11 @@ export default function FormDialog({title, textButton}: DialogProps) {
             <CloseIcon />
           </IconButton>
         </DialogActions>
-        <DialogTitle variant="h2" sx={{ margin: "4.2rem auto" }}>
+        <DialogTitle variant="h2" sx={{ margin: "4.2rem auto"}}>
           {title}
         </DialogTitle>
-        <DialogContent>
+        <DialogContent sx={{paddingTop: '1rem !important'}}>
+          {children}
           <Button
             type="submit"
             variant="contained"
