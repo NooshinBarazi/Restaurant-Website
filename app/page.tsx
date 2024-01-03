@@ -22,8 +22,8 @@ export default function Home() {
   return  <Landing />
   // return(
   //   <>
-  //   <button onClick={openModal}>send</button>
-  //    <RegisterModal open={isModalOpen} onClose={closeModal} />
+  //   {/* <button onClick={openModal}>send</button>
+  //    <RegisterModal open={isModalOpen} onClose={closeModal} /> */}
   //    <Login />
   //    </>
   //    )
