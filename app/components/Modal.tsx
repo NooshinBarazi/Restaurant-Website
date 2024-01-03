@@ -9,11 +9,10 @@ import CloseIcon from "@mui/icons-material/Close";
 
 interface DialogProps{
     title: string;
-    textButton: string;
     children: React.ReactNode
 }
 
-export default function FormDialog({title, textButton, children}: DialogProps) {
+export default function FormDialog({title, children}: DialogProps) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -29,7 +28,7 @@ export default function FormDialog({title, textButton, children}: DialogProps) {
       <Button variant="outlined" onClick={handleClickOpen}>
         Open form dialog
       </Button>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth = 'xs'>
         <DialogActions>
           <IconButton
             onClick={handleClose}
@@ -48,14 +47,6 @@ export default function FormDialog({title, textButton, children}: DialogProps) {
         </DialogTitle>
         <DialogContent sx={{paddingTop: '1rem !important'}}>
           {children}
-          <Button
-            type="submit"
-            variant="contained"
-            sx={{ color: "#fff" }}
-            fullWidth
-          >
-            {textButton}
-          </Button>
         </DialogContent>
       </Dialog>
     </React.Fragment>
