@@ -42,7 +42,7 @@ export default function FormDialog({title, children}: DialogProps) {
             <CloseIcon />
           </IconButton>
         </DialogActions>
-        <DialogTitle variant="h2" sx={{ margin: "4.2rem auto"}}>
+        <DialogTitle variant="h2" sx={{ margin: "4rem auto", fontWeight: '700'}}>
           {title}
         </DialogTitle>
         <DialogContent sx={{paddingTop: '1rem !important'}}>
