@@ -1,6 +1,6 @@
 "use client";
 import { Box, Button } from "@mui/material";
-import FormDialog from "../Modal";
+import FormDialog from "../common/Modal";
 import { useState } from "react";
 import { LoginWithPassword } from "./LoginWithPassword";
 import { LoginWithCode } from "./LoginWithCode";
