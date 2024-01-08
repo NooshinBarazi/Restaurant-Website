@@ -1,5 +1,5 @@
 // import { useState } from "react";
-"use client";
+// "use client";
 import { useState } from "react";
 import Landing from "./Landing";
 import RegisterModal from "./components/Register";
