@@ -4,7 +4,6 @@ import FormDialog from "../common/Modal"
 import { Input } from "../common/Input"
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { Pattern } from "@mui/icons-material";
 
 export const CompleteInformation = () => {
     const {
