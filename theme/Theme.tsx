@@ -6,10 +6,10 @@ import { NextAppDirEmotionCacheProvider } from "./EmotionCashe";
 
 const IranYekan = localFont({
   src: [
-    { path: "../public/fonts/Qs_Iranyekan bold.ttf", weight: '700'},
-    { path: "../public/fonts/Qs_Iranyekan medium.ttf", weight: '600'},
-    { path: "../public/fonts/Qs_Iranyekan light.ttf", weight: '500'},
-    { path: "../public/fonts/Qs_Iranyekan thin.ttf", weight: '300'},
+    { path: "../public/fonts/Qs_Iranyekan bold.ttf", weight: '900'},
+    { path: "../public/fonts/Qs_Iranyekan medium.ttf", weight: '700'},
+    // { path: "../public/fonts/Qs_Iranyekan light.ttf", weight: '400'},
+    // { path: "../public/fonts/Qs_Iranyekan thin.ttf", weight: '300'},
   ],
   variable: "--font-IranYekan",
 });
