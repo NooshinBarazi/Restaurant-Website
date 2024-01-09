@@ -8,7 +8,7 @@ interface InputProps {
   validation: any;
   error: any;
   register: (name: string, options?: RegisterOptions) => UseFormRegisterReturn;
-  disabled: boolean;
+  disabled?: boolean;
   InputProps?: any;
 }
 

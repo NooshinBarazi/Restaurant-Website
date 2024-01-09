@@ -5,6 +5,7 @@ import { useState } from "react";
 import { PasswordField } from "../common/PasswordField";
 import { FormButton } from "../common/FormButton";
 import { PasswordeRcovery } from "./PasswordeRcovery";
+import Link from "next/link";
 
 export const LoginWithCode = () => {
   const [visibility, setVisibility] = useState(false);
@@ -81,8 +82,7 @@ export const LoginWithCode = () => {
       <Typography variant="h5" fontWeight="bold" textAlign="center">
         تاکنون ثبت نام نکرده اید؟
         <Typography variant="h5" component="span" color="primary">
-          {" "}
-          ثبت نام{" "}
+         <Link href='/register'>ثبت نام </Link>
         </Typography>
         کنید ...
       </Typography>
