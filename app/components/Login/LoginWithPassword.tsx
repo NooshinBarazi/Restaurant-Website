@@ -1,6 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { Input } from "../common/Input";
+import Link from "next/link";
 
 export const LoginWithPassword = () => {
   const {
@@ -43,12 +44,19 @@ export const LoginWithPassword = () => {
         <Button
           type="submit"
           variant="contained"
-          sx={{ color: "#fff", marginTop: "1rem" }}
+          sx={{ color: "#fff", margin: "1.5rem 0" }}
           fullWidth
         >
           ارسال کد
         </Button>
       </form>
+      <Typography variant="h5" fontWeight="bold" textAlign="center">
+        تاکنون ثبت نام نکرده اید؟
+        <Typography variant="h5" component="span" color="primary">
+         <Link href='/register'>ثبت نام </Link>
+        </Typography>
+        کنید ...
+      </Typography>
     </>
   );
 };
