@@ -2,8 +2,10 @@
 // "use client";
 import { useState } from "react";
 import Landing from "./Landing";
-import RegisterModal from "./components/Register";
 import { LoginForm } from "./components/Login/Login";
+import { RegisterForm } from "./components/Register/Register";
+import { CompleteInformation } from "./components/Register/CompleteInformation";
+import { NumberVerification } from "./components/Register/NumberVerification";
 
 export default function Home() {
   // const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,11 +19,6 @@ export default function Home() {
   // };
 
   return  <Landing />
-  // return (
-  //   <>
-  //     {/* <button onClick={openModal}>send</button>
-  //    <RegisterModal open={isModalOpen} onClose={closeModal} /> */}
-  //     <LoginForm />
-  //   </>
-  // );
+  // return <NumberVerification />
+ 
 }
