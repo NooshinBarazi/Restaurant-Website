@@ -27,7 +27,7 @@ export const Login = createAsyncThunk(
   "Login",
   async (data: any, { rejectWithValue, dispatch }) => {
     try {
-      const res = await fetch("/login", {
+      const res = await fetch("", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
