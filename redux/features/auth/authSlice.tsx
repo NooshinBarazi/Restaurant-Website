@@ -1,3 +1,4 @@
+import { RootState } from "@/redux/store";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import router from "next/router";
 
@@ -23,9 +24,32 @@ const initialState: AuthState = {
   error: null,
 };
 
-export const Login = createAsyncThunk(
-  "Login",
-  async (data: any, { rejectWithValue, dispatch }) => {
+export const register = createAsyncThunk(
+  "register",
+  async (data: any, { rejectWithValue }) => {
+    try {
+      const res = await fetch("", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const resInfo = await res.json();
+
+      localStorage.setItem("user", JSON.stringify(resInfo.user));
+      router.push("/login");
+
+      return resInfo;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+export const login = createAsyncThunk(
+  "login",
+  async (data: any, { rejectWithValue}) => {
     try {
       const res = await fetch("", {
         method: "POST",
@@ -36,10 +60,8 @@ export const Login = createAsyncThunk(
       });
       const authInfo = await res.json();
       if (res.status === 200) {
-        dispatch(setToken(authInfo.token));
-        dispatch(setUser(authInfo.user));
 
-        localStorage.setItem("token", authInfo.token);
+        localStorage.setItem("token", JSON.stringify(authInfo.token));
 
         router.push("/");
       }
@@ -62,21 +84,39 @@ const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(Login.pending, (state) => {
-      state.loading = true;
-      state.error = null;
-    })
-    .addCase(Login.fulfilled, (state, action)=>{
+    builder
+      .addCase(register.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(register.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
         state.error = null;
-    })
-    .addCase(Login.rejected, (state, action)=>{
+      })
+      .addCase(register.rejected, (state, action) => {
         state.loading = false;
-        state.error= action.error.message || 'Login Failed';
-    })
+        state.error = action.error.message || "Register Failed";
+      })
+      .addCase(login.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload;
+        state.error = null;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message || "Login Failed";
+      });
   },
 });
+
+export const selectUser = (state: RootState) => state.auth.user;
+export const selectLoading = (state: RootState) => state.auth.loading;
+export const selectError = (state: RootState) => state.auth.error;
 
 export const { setToken, setUser } = authSlice.actions;
 export default authSlice.reducer;
