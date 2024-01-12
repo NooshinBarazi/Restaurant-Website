@@ -27,20 +27,20 @@ export const CompleteInformation = () => {
         <Typography variant="h5" color="textSecondary">برای ثبت نام اطلاعات خود را وارد کنید</Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
         <Input
-            name="name"
+            name="full_name"
             label="نام و نام خانوادگی"
             type="text"
-            error={errors?.name?.message}
+            error={errors?.full_name?.message}
             register={register}
             validation={{
               required: "لطفا نام و نام خانوادگی خود را وارد نمایید",
             }}
           />
                  <Input
-          name="phoneNumber"
+          name="phone_number"
           label="شماره همراه"
           type="text"
-          error={errors?.phoneNumber?.message}
+          error={errors?.phone_number?.message}
           register={register}
           disabled={false}
           validation={{
@@ -75,10 +75,10 @@ export const CompleteInformation = () => {
             }}
           />
              <Input
-          name="password"
+          name="hashed_password"
           label="رمز ورود"
           type="password"
-          error={errors?.password?.message}
+          error={errors?.hashed_password?.message}
           register={register}
           disabled={false}
           validation={{

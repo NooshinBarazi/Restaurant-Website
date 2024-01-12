@@ -10,7 +10,7 @@ export const getFoods = createAsyncThunk(
   "getfoods",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch("http://37.32.21.146:8080/shop");
+      const res = await fetch("http://127.0.0.1:8080/shop");
       const data = await res.json();
       return data;
     } catch (error) {
