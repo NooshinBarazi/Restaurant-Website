@@ -1,6 +1,6 @@
 import { RootState } from "@/redux/store";
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import router from "next/router";
+
 
 interface AuthState {
   user: User | null;
@@ -10,10 +10,10 @@ interface AuthState {
 }
 
 interface User {
-  full_name: string;
-  phone_number: string;
+  fullName: string;
+  phoneNumber: string;
   email: string;
-  hashed_password: string;
+  password: string;
 }
 
 const initialState: AuthState = {
@@ -37,7 +37,6 @@ export const signUp = createAsyncThunk(
       const resInfo = await res.json();
 
       localStorage.setItem("user", JSON.stringify(resInfo.user));
-      router.push("/login");
 
       return resInfo;
     } catch (error) {
@@ -61,8 +60,7 @@ export const login = createAsyncThunk(
       if (res.status === 200) {
 
         localStorage.setItem("token", JSON.stringify(authInfo.token));
-
-        router.push("/");
+        
       }
       return authInfo;
     } catch (error) {
