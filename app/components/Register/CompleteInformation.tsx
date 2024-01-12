@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
 import { signUp } from "@/redux/features/auth/authSlice";
+import { useRouter } from "next/router";
 
 export const CompleteInformation = () => {
     const {
@@ -15,11 +16,13 @@ export const CompleteInformation = () => {
         formState: { errors },
       } = useForm();
 
-      const dispatch = useAppDispatch()
+      const dispatch = useAppDispatch();
+      const router = useRouter()
       const phoneNumber = watch("phoneNumber", "");
 
       const onSubmit = async (data: any) => {
        await dispatch(signUp(data));
+       router.push('/login');
       };
 
   return (
@@ -27,7 +30,7 @@ export const CompleteInformation = () => {
         <Typography variant="h5" color="textSecondary">برای ثبت نام اطلاعات خود را وارد کنید</Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
         <Input
-            name="full_name"
+            name="fullName"
             label="نام و نام خانوادگی"
             type="text"
             error={errors?.full_name?.message}
@@ -37,7 +40,7 @@ export const CompleteInformation = () => {
             }}
           />
                  <Input
-          name="phone_number"
+          name="phoneNumber"
           label="شماره همراه"
           type="text"
           error={errors?.phone_number?.message}
@@ -75,7 +78,7 @@ export const CompleteInformation = () => {
             }}
           />
              <Input
-          name="hashed_password"
+          name="password"
           label="رمز ورود"
           type="password"
           error={errors?.hashed_password?.message}

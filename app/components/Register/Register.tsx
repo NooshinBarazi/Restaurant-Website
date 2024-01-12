@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 import FormDialog from "../common/Modal";
 import { Input } from "../common/Input";
 
+
 export const RegisterForm = () => {
   const {
     register,

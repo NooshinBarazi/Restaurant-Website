@@ -4,6 +4,7 @@ import { Input } from "../common/Input";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
 import {login} from "../../../redux/features/auth/authSlice"
+import { useRouter } from "next/router";
 
 export const LoginWithPassword = () => {
   const {
@@ -14,10 +15,12 @@ export const LoginWithPassword = () => {
   } = useForm();
 
   const dispatch = useAppDispatch();
+  const router = useRouter()
   const phoneNumber = watch("phoneNumber", "");
 
   const onSubmit = async (data: any) => {
     await dispatch(login(data));
+    router.push('/')
   };
 
   return (
