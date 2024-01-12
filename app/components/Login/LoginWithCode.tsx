@@ -76,8 +76,15 @@ export const LoginWithCode = () => {
           validation={{
             required: "لطفا رمز را وارد نمایید",
             minLength: {
-              value: 11,
-              message: "ساختار شماره همراه صحیح نمی باشد",
+              value: 8,
+              message: "min length is 8"
+            },
+            validate: (value: any) => {
+              return (
+                [/[a-z]/, /[A-Z]/, /[0-9]/, /[^a-zA-Z0-9]/].every((pattern) =>
+                  pattern.test(value)
+                ) || "must include lower, upper, number, and special chars"
+              );
             },
           }}
         />
