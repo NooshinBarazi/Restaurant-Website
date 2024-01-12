@@ -16,7 +16,6 @@ export const LoginWithPassword = () => {
 
   const dispatch = useAppDispatch();
   const router = useRouter()
-  const phoneNumber = watch("phoneNumber", "");
 
   const onSubmit = async (data: any) => {
     await dispatch(login(data));
@@ -38,13 +37,21 @@ export const LoginWithPassword = () => {
           type="string"
           error={errors?.phoneNumber?.message}
           register={register}
-          disabled={phoneNumber.length === 11}
+          disabled={false}
           validation={{
             required: "لطفا شماره همراه خود را وارد نمایید",
             minLength: {
               value: 11,
               message: "ساختار شماره همراه صحیح نمی باشد",
             },
+            maxLength: {
+              value: 11,
+              message: " شماره همراه باید حداکثر 11 رقم باشد ",
+            },
+            pattern: {
+              value: /^[0-9]+$/,
+              message: 'Please enter a number',
+          },
           }}
         />
         <Button
