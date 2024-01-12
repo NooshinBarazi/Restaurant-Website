@@ -2,6 +2,8 @@ import { Button, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { Input } from "../common/Input";
 import Link from "next/link";
+import { useAppDispatch } from "@/redux/store";
+import {login} from "../../../redux/features/auth/authSlice"
 
 export const LoginWithPassword = () => {
   const {
@@ -11,10 +13,11 @@ export const LoginWithPassword = () => {
     formState: { errors },
   } = useForm();
 
+  const dispatch = useAppDispatch();
   const phoneNumber = watch("phoneNumber", "");
 
-  const onSubmit = (data: any) => {
-    console.log("data of login form", data);
+  const onSubmit = async (data: any) => {
+    await dispatch(login(data));
   };
 
   return (
@@ -53,7 +56,7 @@ export const LoginWithPassword = () => {
       <Typography variant="h5" fontWeight="bold" textAlign="center">
         تاکنون ثبت نام نکرده اید؟
         <Typography variant="h5" component="span" color="primary">
-         <Link href='/register'>ثبت نام </Link>
+          <Link href="/register">ثبت نام </Link>
         </Typography>
         کنید ...
       </Typography>

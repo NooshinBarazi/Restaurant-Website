@@ -1,5 +1,5 @@
 import { RootState } from "@/redux/store";
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import router from "next/router";
 
 interface AuthState {
@@ -24,8 +24,8 @@ const initialState: AuthState = {
   error: null,
 };
 
-export const register = createAsyncThunk(
-  "register",
+export const signUp = createAsyncThunk(
+  "signUp",
   async (data: any, { rejectWithValue }) => {
     try {
       const res = await fetch("", {
@@ -79,24 +79,24 @@ const authSlice = createSlice({
     setToken: (state, action) => {
       state.token = action.payload;
     },
-    setUser: (state, action) => {
+    setUser: (state, action: PayloadAction<User>) => {
       state.user = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state) => {
+      .addCase(signUp.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(register.fulfilled, (state, action) => {
+      .addCase(signUp.fulfilled, (state, action: PayloadAction<User>) => {
         state.loading = false;
         state.user = action.payload;
         state.error = null;
       })
-      .addCase(register.rejected, (state, action) => {
+      .addCase(signUp.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message || "Register Failed";
+        state.error = action.error.message || "sign up Failed";
       })
       .addCase(login.pending, (state) => {
         state.loading = true;

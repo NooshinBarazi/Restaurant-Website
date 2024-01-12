@@ -4,6 +4,8 @@ import FormDialog from "../common/Modal"
 import { Input } from "../common/Input"
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import { useAppDispatch } from "@/redux/store";
+import { signUp } from "@/redux/features/auth/authSlice";
 
 export const CompleteInformation = () => {
     const {
@@ -13,10 +15,11 @@ export const CompleteInformation = () => {
         formState: { errors },
       } = useForm();
 
+      const dispatch = useAppDispatch()
       const phoneNumber = watch("phoneNumber", "");
 
-      const onSubmit = (data: any) => {
-        console.log("data of login form", data);
+      const onSubmit = async (data: any) => {
+       await dispatch(signUp(data));
       };
 
   return (
