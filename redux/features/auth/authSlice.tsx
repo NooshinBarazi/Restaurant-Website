@@ -12,7 +12,7 @@ interface AuthState {
 interface User {
   id: string;
   fullName: string;
-  phoneNumber: number;
+  phoneNumber: string;
   email: string;
   password: string;
 }
@@ -28,7 +28,7 @@ export const register = createAsyncThunk(
   "register",
   async (data: any, { rejectWithValue }) => {
     try {
-      const res = await fetch("", {
+      const res = await fetch("http://127.0.0.1:8080/post/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export const login = createAsyncThunk(
   "login",
   async (data: any, { rejectWithValue}) => {
     try {
-      const res = await fetch("", {
+      const res = await fetch("http://127.0.0.1:8080/post/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

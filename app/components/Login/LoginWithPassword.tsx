@@ -29,7 +29,7 @@ export const LoginWithPassword = () => {
         <Input
           name="phoneNumber"
           label="شماره همراه"
-          type="number"
+          type="string"
           error={errors?.phoneNumber?.message}
           register={register}
           disabled={phoneNumber.length === 11}
