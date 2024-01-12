@@ -27,16 +27,6 @@ export const CompleteInformation = () => {
         <Typography variant="h5" color="textSecondary">برای ثبت نام اطلاعات خود را وارد کنید</Typography>
         <form onSubmit={handleSubmit(onSubmit)}>
         <Input
-            name="full_name"
-            label="نام و نام خانوادگی"
-            type="text"
-            error={errors?.full_name?.message}
-            register={register}
-            validation={{
-              required: "لطفا نام و نام خانوادگی خود را وارد نمایید",
-            }}
-          />
-                 <Input
           name="phone_number"
           label="شماره همراه"
           type="text"
@@ -60,21 +50,7 @@ export const CompleteInformation = () => {
           }}
           
         />
-             <Input
-            name="email"
-            label="ایمیل"
-            type="email"
-            error={errors?.email?.message}
-            register={register}
-            validation={{
-              required: "لطفا ایمیل خود را وارد نمایید",
-              pattern: {
-                value: /\S+@\S+\.\S+/,
-                message: "Entered value does not match email format"
-              },
-            }}
-          />
-             <Input
+        <Input
           name="hashed_password"
           label="رمز ورود"
           type="password"
@@ -96,6 +72,32 @@ export const CompleteInformation = () => {
             },
           }}
         />
+        <Input
+            name="full_name"
+            label="نام و نام خانوادگی"
+            type="text"
+            error={errors?.full_name?.message}
+            register={register}
+            validation={{
+              required: "لطفا نام و نام خانوادگی خود را وارد نمایید",
+            }}
+          />
+                 
+             <Input
+            name="email"
+            label="ایمیل"
+            type="email"
+            error={errors?.email?.message}
+            register={register}
+            validation={{
+              required: "لطفا ایمیل خود را وارد نمایید",
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: "Entered value does not match email format"
+              },
+            }}
+          />
+             
           <Button
             type="submit"
             variant="contained"
