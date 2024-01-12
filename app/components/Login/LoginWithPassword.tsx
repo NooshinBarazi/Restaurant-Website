@@ -4,7 +4,7 @@ import { Input } from "../common/Input";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
 import {login} from "../../../redux/features/auth/authSlice"
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export const LoginWithPassword = () => {
   const {

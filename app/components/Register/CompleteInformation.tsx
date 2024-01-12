@@ -6,19 +6,17 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
 import { signUp } from "@/redux/features/auth/authSlice";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export const CompleteInformation = () => {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
       } = useForm();
 
       const dispatch = useAppDispatch();
       const router = useRouter()
-      const phoneNumber = watch("phoneNumber", "");
 
       const onSubmit = async (data: any) => {
        await dispatch(signUp(data));
@@ -33,7 +31,7 @@ export const CompleteInformation = () => {
             name="fullName"
             label="نام و نام خانوادگی"
             type="text"
-            error={errors?.full_name?.message}
+            error={errors?.fullName?.message}
             register={register}
             validation={{
               required: "لطفا نام و نام خانوادگی خود را وارد نمایید",
@@ -43,7 +41,7 @@ export const CompleteInformation = () => {
           name="phoneNumber"
           label="شماره همراه"
           type="text"
-          error={errors?.phone_number?.message}
+          error={errors?.phoneNumber?.message}
           register={register}
           disabled={false}
           validation={{

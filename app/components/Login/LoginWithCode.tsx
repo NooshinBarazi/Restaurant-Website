@@ -7,7 +7,7 @@ import { FormButton } from "../common/FormButton";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
 import { login } from "@/redux/features/auth/authSlice";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export const LoginWithCode = () => {
   const [visibility, setVisibility] = useState(false);
@@ -21,7 +21,6 @@ export const LoginWithCode = () => {
 
   const dispatch = useAppDispatch();
   const router = useRouter()
-  const phoneNumber = watch("phoneNumber", "");
 
   const onSubmit = async(data: any) => {
    await dispatch(login(data));
