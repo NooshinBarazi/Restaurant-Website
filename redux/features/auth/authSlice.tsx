@@ -10,11 +10,10 @@ interface AuthState {
 }
 
 interface User {
-  id: string;
-  fullName: string;
-  phoneNumber: string;
+  full_name: string;
+  phone_number: string;
   email: string;
-  password: string;
+  hashed_password: string;
 }
 
 const initialState: AuthState = {
