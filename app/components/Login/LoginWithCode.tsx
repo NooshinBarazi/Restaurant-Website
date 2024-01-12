@@ -4,8 +4,9 @@ import { Input } from "../common/Input";
 import { useState } from "react";
 import { PasswordField } from "../common/PasswordField";
 import { FormButton } from "../common/FormButton";
-import { PasswordeRcovery } from "./PasswordeRcovery";
 import Link from "next/link";
+import { useAppDispatch } from "@/redux/store";
+import { login } from "@/redux/features/auth/authSlice";
 
 export const LoginWithCode = () => {
   const [visibility, setVisibility] = useState(false);
@@ -17,10 +18,11 @@ export const LoginWithCode = () => {
     formState: { errors },
   } = useForm();
 
+  const dispatch = useAppDispatch();
   const phoneNumber = watch("phoneNumber", "");
 
-  const onSubmit = (data: any) => {
-    console.log("data of login form", data);
+  const onSubmit = async(data: any) => {
+   await dispatch(login(data));
   };
   return (
     <>
